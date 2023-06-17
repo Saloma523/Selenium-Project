@@ -9,7 +9,7 @@ import java.util.Properties;
  */
 public class ConfigurationReader {
 
-    private static Properties properties = new Properties();
+    private static Properties properties = new Properties();// its statis to make sure its created and loaded before everything else
 
     static {
         try{
@@ -17,15 +17,19 @@ public class ConfigurationReader {
             FileInputStream file = new FileInputStream("configuration.properties");
             //load the properties with file (load properties)
             properties.load(file);
+
+            file.close();// close the file in the memory after we opened it
         }catch (IOException e){
-            System.out.println("FILE NOT FOUND WITH GIVEN PATH");
             e.printStackTrace();
+            System.out.println("FILE NOT FOUND WITH GIVEN PATH");
+
 
         }
 
     }
 
-    private static String getProperties(String keyword){
+    public static String getProperty(String keyword){//creat a util method to use the object
+
         return properties.getProperty(keyword);
     }
 
