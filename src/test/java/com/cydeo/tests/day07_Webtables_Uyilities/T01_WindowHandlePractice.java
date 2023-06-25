@@ -1,4 +1,4 @@
-package com.cydeo.tests.day07;
+package com.cydeo.tests.day07_Webtables_Uyilities;
 
 import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.WebDriverFactory;
